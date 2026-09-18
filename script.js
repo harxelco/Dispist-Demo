@@ -32,7 +32,7 @@ const activeCount = document.getElementById('activeCount');
 /* ---------- Utilities ---------- */
 function rand(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
 function escapeHtml(s){ const d=document.createElement('div'); d.innerText=s; return d.innerHTML; }
-function isMobileViewport(){ return window.matchMedia('(max-width:767px)').matches; }
+function isMobileViewport(){ return window.matchMedia('(max-width:1023px)').matches; }
 
 function toast(message, tone='success'){
   const el = document.createElement('div');
