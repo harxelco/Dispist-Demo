@@ -272,3 +272,20 @@ h1,h2,h3,.font-display{font-family:'Sora',ui-sans-serif,system-ui,sans-serif;}
   .workspace-tabs{display:none;}
   .bottom-nav, .mobile-drawer, .mobile-drawer-backdrop{display:none !important;}
 }
+
+/* ===== v2: modal + driver rows ===== */
+.modal-backdrop{position:fixed; inset:0; background:rgba(20,20,30,.55); display:none; align-items:center; justify-content:center; z-index:60; padding:16px;}
+.modal-backdrop.open{display:flex;}
+.modal-card{background:#fff; border-radius:16px; padding:20px; width:100%; max-width:480px; max-height:90vh; overflow-y:auto;}
+.drv-row{display:flex; gap:10px; align-items:flex-start; padding:10px; border:1px solid rgba(30,30,40,.1); border-radius:10px; cursor:pointer;}
+.drv-row:has(input:checked){border-color:var(--brand-orange-500); background:rgba(219,58,3,.04);}
+button:focus-visible, select:focus-visible, [tabindex]:focus-visible, input:focus-visible{outline:2px solid var(--brand-orange-500); outline-offset:2px;}
+#map{height:500px;width:100%;border-radius:10px;overflow:hidden;background:#F4F1EE;}
+.leaflet-driver-icon,.leaflet-depot-icon,.leaflet-drop-icon{background:transparent;border:0;white-space:nowrap;}
+.leaflet-driver-icon{display:flex;align-items:center;gap:5px;}
+.leaflet-driver-dot{width:14px;height:14px;flex:0 0 14px;border:2px solid #fff;border-radius:50%;background:var(--driver-color);box-shadow:0 0 0 1px rgba(0,0,0,.3);}
+.leaflet-driver-dot.is-moving{animation:leafletDriverPulse 1.4s infinite;}
+.leaflet-driver-label,.leaflet-depot-icon b,.leaflet-drop-icon b{color:#1E1E28;font:600 11px Inter,sans-serif;text-shadow:0 0 3px #fff,0 0 3px #fff;}
+.leaflet-depot-icon span{display:inline-block;width:14px;height:14px;margin-right:5px;border-radius:3px;background:#1E1E28;vertical-align:middle;}
+.leaflet-drop-icon span{display:inline-block;width:12px;height:12px;margin-right:5px;border:2px solid #fff;border-radius:50%;background:#DB3A03;box-shadow:0 0 0 1px rgba(0,0,0,.3);vertical-align:middle;}
+@keyframes leafletDriverPulse{0%,100%{box-shadow:0 0 0 0 rgba(47,111,224,.55)}50%{box-shadow:0 0 0 8px rgba(47,111,224,0)}}
