@@ -1,9 +1,12 @@
 /* =========================================================================
    DISPIST DEMO v2 — Phase 1 core. Loaded AFTER script.js; layers on top of it.
-   Sections: config · bus · store · geo · sim · createDispatch · suggestDriver
+   Sections: config (tunable constants below: tick rate, move speed,
+   max jobs per driver, trail length — all wired into tick()/batchAssign()) · bus · store · geo · sim · createDispatch · suggestDriver
              · manual-assign modal · fleet map · wiring
    Anything marked SIMULATED must be replaced by a real API call later.
 ========================================================================= */
+// CONFIG — every constant below is live: TICK_MS/MOVE_FACTOR drive tick(), MAX_JOBS_PER_DRIVER caps batchAssign(),
+// TRAIL_LEN sets map trail length, STATUS_PROGRESS places drivers along depot->drop by status.
 const TICK_MS = 1000,
   MOVE_FACTOR = 0.3,
   MAX_JOBS_PER_DRIVER = 1,
